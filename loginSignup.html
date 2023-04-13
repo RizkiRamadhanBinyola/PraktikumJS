@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login dan signup</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav>
+		<div class="logo"><a href="index.html">🏠</a></div>
+		<ul>
+		  <li><a href="formDaftar.html">Form Daftar</a></li>
+		  <li><a href="login.html">Login</a></li>
+		  <li><a href="loginSignup.html">Login & sign up</a></li>
+		</ul>
+	  </nav>
+
+	<h1>Login dan Sign up</h1>
+
+	<h2>Login</h2>
+	<small>Login akun yang anda daftarkan</small>
+	<br>
+	<br>
+	<label for="username-login">Username:</label>
+	<input type="text" id="username-login" name="username-login"><br><br>
+	<label for="password-login">Password:</label>
+	<input type="password" id="password-login" name="password-login"><br><br>
+	<button onclick="login()">Login</button>
+
+	<hr>
+
+	<h2>Sign Up</h2>
+	<small>Daftarkan akun anda agar bisa login</small>
+	<br>
+	<br>
+	<label for="username-signup">Username:</label>
+	<input type="text" id="username-signup" name="username-signup"><br><br>
+	<label for="password-signup">Password:</label>
+	<input type="password" id="password-signup" name="password-signup"><br><br>
+	<button onclick="signup()">Sign Up</button>
+
+	<hr>
+    <h2>Nama : Rizki Ramadhan Binyola</h2>
+    <h2>Kelas : XI RPL</h2>
+
+	<script>
+		var users = []; // Untuk menyimpan ussername dan password yang sudah terdaftar
+
+		// Function login 
+		function login() {
+			var username = document.getElementById("username-login").value; // Buat ngambil username yang udah diinput pak
+			var password = document.getElementById("password-login").value; // Buat ngambil password yang udah diinput
+
+			// Buat Nyari ussername sama password udah sesuai sama yang terdaftar di form signup atau tidak
+			// Kalo ussername yang sudah ada di dalam array maka user bisa login
+			if (users.some(user => user.username === username && user.password === password)) { // Untuk mengecek  ussername dan password di dalam array users sama dengan ussername dan password yang di input
+				// Pengecekan array menggunakan method some()
+				alert("Login berhasil"); // Jika ussername dan password benar maka alert ini akan muncul
+			} else { // Kalo ussername dan password salah atau tidak terdaftar ke dalam array 
+				// Maka alert ini akan muncul
+				alert("Username atau password salah");
+			}
+		}
+
+
+		// Function signup
+		function signup() {
+			var username = document.getElementById("username-signup").value; // Buat ngambil ussername yang udah di input
+			var password = document.getElementById("password-signup").value; // Buat ngambil pswd yang sudah di input
+
+			if (username.length === 0 || password.length === 0) {
+				alert("Isi Form dengan lengkap"); // Menampilkan alert jika form belum terisi lengkap
+			} else {
+				users.push({username: username, password: password}); // Menyimpan ussername dan password ke dalam variabel array users;
+				alert("Sign up berhasil"); // Menampilkan alert()
+			}
+		}
+
+
+	</script>
+</body>
+</html>

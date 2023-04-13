@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem login </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">🏠</a></div>
+        <ul>
+          <li><a href="formDaftar.html">Form Daftar</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="loginSignup.html">Login & sign up</a></li>
+        </ul>
+      </nav>
+
+    <h1>Sistem Login Sederhana</h1>
+    <label>Ussername: </label>
+    <input type="text" id="ussername" placeholder="Masukan Ussername anda!" required>
+    <br><br>
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Masukan password anda!" required>
+    <br><br>
+    <button onclick="login()">Login</button>
+    <br>
+    <br>
+    <div id="msg"></div>
+    <br>
+    <br>
+    <small>Ussername : stoy</small>
+    <br>
+    <small>Password : kulitkerangajaib</small>
+
+    <hr>
+    <h2>Nama : Rizki Ramadhan Binyola</h2>
+    <h2>Kelas : XI RPL</h2>
+
+    <script>
+        // Fungsi login
+        function login() {
+            var user = document.getElementById("ussername").value; // Buat ngambil value ussername dari tag input yang di input user
+            var ussername = "stoy"; // Ussername yang benar
+            var userPassword = document.getElementById("password").value; // Untuk ngambil value password dari tag input yang di input user
+            var password = "kulitkerangajaib"; // Password yang benar
+
+            // Mengecek apakah ussername sama kaya var ussername = "joy"
+            if (user == ussername && userPassword === password) {
+                // Jika sama maka msg berikut akan ditampilkan
+                document.getElementById("msg").innerHTML = "<p class='success-message'>Login berhasil!! <br> Selamat datang "+ user +"</p>";
+            
+            } else if (user == ussername && userPassword !== password) { // Kalau ussername benar tetapi password yang diinput salah
+                // Maka tampilkan alert berikut
+                alert(" Password : " + userPassword + " Salah");
+            } else if (user !== ussername && userPassword === password) { // Kalau ussername salah tapi password yang diinput benar
+                // Maka tampilkan alert berikut
+                alert("Username : " + user + " Salah");
+            } else {
+                alert("Username : " + user + " dan password : " + userPassword +" salah"); // Untuk mengambil value dari inputan user
+            }
+        }
+    </script>
+</body>
+</html>
