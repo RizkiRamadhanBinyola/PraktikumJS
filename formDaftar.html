@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form pendaftaran</title>
+</head>
+<body>
+    <h1>Form pendaftaran</h1>
+    <form>
+        <input type="text" name="txtNama" id="txtNama" size="20" placeholder="Nama" required>
+        <input type="password" name="txtPass" id="txtPass" size="20" placeholder="Password" required>
+        <input type="button" name="btnTest" value="Daftar" onclick="welcome()">
+    </form>
+
+    <hr>
+    <h2>Nama : Rizki Ramadhan Binyola</h2>
+    <h2>Kelas : XI RPL</h2>
+
+    <script>
+        function welcome() {
+            var nama = document.getElementById('txtNama').value; // Untuk mengambil value nama dari inputan id txtNama; 
+            var pswd = document.getElementById('txtPass').value; // Untuk mengambil value password dari inputan id txtPass;
+    
+            if (nama.length != 0 && pswd.length != 0) { // Untuk mengecek apakah nama dan pswd memiliki panjang
+                // Jika variabel nama dan pswd tidak kosong maka jalankan kode berikut
+                document.write("Anda berhasil mendaftar dengan data akun sebagai berikut <br> ussername : <strong>" + nama + "</strong> <br> Password : <strong>" + pswd + "</strong>");
+
+                // Jika variabel nama dan pswd kosong maka kode yang di dalam blokode tidak dapat dijalankan dan variabel tidak memiliki nilai value
+            }
+        }
+    </script>
+    
+</body>
+</html>
